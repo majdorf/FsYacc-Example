@@ -9,9 +9,13 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>YaccSample</RootNamespace>
     <AssemblyName>YaccSample</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <Name>YaccSample</Name>
     <TargetFrameworkProfile />
+    <TargetFSharpCoreVersion>4.4.3.0</TargetFSharpCoreVersion>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,31 +38,52 @@
     <PlatformTarget>x86</PlatformTarget>
     <DocumentationFile>bin\Release\YaccSample.XML</DocumentationFile>
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
-  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <PropertyGroup>
+    <PreBuildEvent>$(ProjectDir)..\packages\FsLexYacc.7.0.6\build\fslex.exe "$(ProjectDir)SqlLexer.fsl" --unicode
+$(ProjectDir)..\packages\FsLexYacc.7.0.6\build\fsyacc.exe "$(ProjectDir)SqlParser.fsp" --module SqlParser</PreBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="Sql.fs" />
-    <None Include="SqlParser.fsp" />
     <None Include="SqlLexer.fsl" />
     <Compile Include="SqlParser.fsi" />
     <Compile Include="SqlParser.fs" />
     <Compile Include="SqlLexer.fs" />
     <Compile Include="Program.fs" />
+    <Content Include="packages.config" />
+    <None Include="SqlParser.fsp" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FSharp.PowerPack, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a19089b1c74d0809" />
+    <Reference Include="FSharp.Core, Version=4.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="FsLexYacc.Runtime">
+      <HintPath>..\packages\FsLexYacc.Runtime.7.0.6\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10\FsLexYacc.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
-  <PropertyGroup>
-    <PreBuildEvent>fslex.exe "$(ProjectDir)SqlLexer.fsl" --unicode
-fsyacc.exe "$(ProjectDir)SqlParser.fsp" --module SqlParser</PreBuildEvent>
-  </PropertyGroup>
+  <Import Project="..\packages\FsLexYacc.7.0.6\build\FsLexYacc.targets" Condition="Exists('..\packages\FsLexYacc.7.0.6\build\FsLexYacc.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\FsLexYacc.7.0.6\build\FsLexYacc.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FsLexYacc.7.0.6\build\FsLexYacc.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	     Other similar extension points exist, see Microsoft.Common.targets.
 	<Target Name="BeforeBuild">

@@ -1,4 +1,4 @@
-# 1 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
+# 1 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fsl"
     
 module SqlLexer
 open System   
@@ -32,7 +32,7 @@ let ops =
         ">=",   GE;   
     ] |> Map.ofList   
 
-# 35 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 35 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"
 let trans : uint16[] array = 
     [| 
     (* State 0 *)
@@ -79,49 +79,47 @@ and tokenize  (lexbuf : Microsoft.FSharp.Text.Lexing.LexBuffer<_>) = _fslex_toke
 and _fslex_tokenize  _fslex_state lexbuf =
   match _fslex_tables.Interpret(_fslex_state,lexbuf) with
   | 0 -> ( 
-# 45 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
+# 45 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fsl"
                                  tokenize lexbuf 
-# 84 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 84 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"
           )
   | 1 -> ( 
-# 46 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
+# 46 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fsl"
                                  lexbuf.EndPos <- lexbuf.EndPos.NextLine; tokenize lexbuf; 
-# 89 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 89 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"
           )
   | 2 -> ( 
-# 47 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
+# 47 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fsl"
                                  INT(Int32.Parse(LexBuffer<_>.LexemeString lexbuf)) 
-# 94 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 94 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"
           )
   | 3 -> ( 
-# 48 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
+# 48 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fsl"
                                  FLOAT(Double.Parse(LexBuffer<_>.LexemeString lexbuf)) 
-# 99 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 99 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"
           )
   | 4 -> ( 
-# 49 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
+# 49 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fsl"
                                  ops.[LexBuffer<_>.LexemeString lexbuf] 
-# 104 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 104 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"
           )
   | 5 -> ( 
-# 50 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
+# 50 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fsl"
                                  match keywords.TryFind(LexBuffer<_>.LexemeString lexbuf) with   
                                  | Some(token) -> token   
                                  | None -> ID(LexBuffer<_>.LexemeString lexbuf) 
-# 111 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 111 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"
           )
   | 6 -> ( 
-# 53 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
+# 53 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fsl"
                                  COMMA 
-# 116 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 116 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"
           )
   | 7 -> ( 
-# 54 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
+# 54 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fsl"
                                  EOF 
-# 121 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 121 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"
           )
   | _ -> failwith "tokenize"
 
-# 54 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fsl"
-
-# 3000000 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlLexer.fs"
+# 3000000 "D:\workspace\FsYacc-Example\YaccSample\SqlLexer.fs"

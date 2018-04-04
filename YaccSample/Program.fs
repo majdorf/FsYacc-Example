@@ -10,7 +10,7 @@ let x = "
     ORDER BY x ASC, y DESC, z   
 "   
  
-let lexbuf = Lexing.LexBuffer<_>.FromString x
+let lexbuf = Microsoft.FSharp.Text.Lexing.LexBuffer<_>.FromString x
 let y = SqlParser.start SqlLexer.tokenize lexbuf   
 printfn "%A" y   
  

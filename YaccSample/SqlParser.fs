@@ -3,11 +3,11 @@ module SqlParser
 #nowarn "64";; // turn off warnings that type variables used in production annotations are instantiated to concrete type
 open Microsoft.FSharp.Text.Lexing
 open Microsoft.FSharp.Text.Parsing.ParseHelpers
-# 1 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 1 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
    
 open Sql   
 
-# 10 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 10 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
 // This type is the type of tokens accepted by the parser
 type token = 
   | EOF
@@ -78,7 +78,7 @@ type nonTerminalId =
     | NONTERM_orderByList
     | NONTERM_orderBy
 
-// This function maps tokens to integers indexes
+// This function maps tokens to integer indexes
 let tagOfToken (t:token) = 
   match t with
   | EOF  -> 0 
@@ -106,7 +106,7 @@ let tagOfToken (t:token) =
   | INT _ -> 22 
   | ID _ -> 23 
 
-// This function maps integers indexes to symbolic token ids
+// This function maps integer indexes to symbolic token ids
 let tokenTagToTokenId (tokenIdx:int) = 
   match tokenIdx with
   | 0 -> TOKEN_EOF 
@@ -243,7 +243,7 @@ let _fsyacc_reductionSymbolCounts = [|1us; 8us; 1us; 3us; 0us; 1us; 2us; 4us; 4u
 let _fsyacc_productionToNonTerminalTable = [|0us; 1us; 2us; 2us; 3us; 3us; 3us; 4us; 4us; 4us; 5us; 5us; 6us; 6us; 6us; 7us; 7us; 8us; 8us; 8us; 8us; 8us; 9us; 9us; 9us; 10us; 10us; 11us; 11us; 12us; 12us; 12us; |]
 let _fsyacc_immediateActions = [|65535us; 49152us; 65535us; 65535us; 65535us; 65535us; 65535us; 65535us; 65535us; 16385us; 16386us; 65535us; 16387us; 65535us; 16390us; 65535us; 65535us; 65535us; 16391us; 65535us; 65535us; 65535us; 16392us; 65535us; 65535us; 65535us; 16393us; 65535us; 16395us; 65535us; 65535us; 65535us; 65535us; 16397us; 65535us; 16398us; 65535us; 16400us; 16401us; 16402us; 16403us; 16404us; 16405us; 16406us; 16407us; 16408us; 65535us; 65535us; 16410us; 65535us; 65535us; 16412us; 65535us; 16414us; 16415us; |]
 let _fsyacc_reductions ()  =    [| 
-# 246 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 246 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : Sql.sqlStatement)) in
             Microsoft.FSharp.Core.Operators.box
@@ -252,7 +252,7 @@ let _fsyacc_reductions ()  =    [|
                       raise (Microsoft.FSharp.Text.Parsing.Accept(Microsoft.FSharp.Core.Operators.box _1))
                    )
                  : '_startstart));
-# 255 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 255 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _2 = (let data = parseState.GetInput(2) in (Microsoft.FSharp.Core.Operators.unbox data : 'columnList)) in
             let _4 = (let data = parseState.GetInput(4) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
@@ -262,7 +262,7 @@ let _fsyacc_reductions ()  =    [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 28 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 28 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                      
                                                      { Table = _4;   
                                                        Columns = List.rev _2;   
@@ -271,122 +271,122 @@ let _fsyacc_reductions ()  =    [|
                                                        OrderBy = _7 }   
                                                  
                    )
-# 28 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 28 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : Sql.sqlStatement));
-# 276 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 276 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 36 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 36 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                    [_1]
                    )
-# 36 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 36 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'columnList));
-# 287 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 287 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : 'columnList)) in
             let _3 = (let data = parseState.GetInput(3) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 37 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 37 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                   _3 :: _1 
                    )
-# 37 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 37 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'columnList));
-# 299 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 299 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 41 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 41 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            [] 
                    )
-# 41 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 41 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'joinList));
-# 309 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 309 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : 'joinClause)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 42 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 42 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            [_1] 
                    )
-# 42 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 42 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'joinList));
-# 320 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 320 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : 'joinClause)) in
             let _2 = (let data = parseState.GetInput(2) in (Microsoft.FSharp.Core.Operators.unbox data : 'joinList)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 43 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 43 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            _1 :: _2 
                    )
-# 43 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 43 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'joinList));
-# 332 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 332 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _3 = (let data = parseState.GetInput(3) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
             let _4 = (let data = parseState.GetInput(4) in (Microsoft.FSharp.Core.Operators.unbox data : 'joinOnClause)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 46 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 46 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            _3, Inner, _4 
                    )
-# 46 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 46 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'joinClause));
-# 344 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 344 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _3 = (let data = parseState.GetInput(3) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
             let _4 = (let data = parseState.GetInput(4) in (Microsoft.FSharp.Core.Operators.unbox data : 'joinOnClause)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 47 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 47 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            _3, Left, _4 
                    )
-# 47 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 47 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'joinClause));
-# 356 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 356 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _3 = (let data = parseState.GetInput(3) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
             let _4 = (let data = parseState.GetInput(4) in (Microsoft.FSharp.Core.Operators.unbox data : 'joinOnClause)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 48 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 48 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            _3, Right, _4 
                    )
-# 48 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 48 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'joinClause));
-# 368 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 368 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 51 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 51 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            None 
                    )
-# 51 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 51 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'joinOnClause));
-# 378 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 378 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _2 = (let data = parseState.GetInput(2) in (Microsoft.FSharp.Core.Operators.unbox data : 'conditionList)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 52 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 52 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            Some(_2) 
                    )
-# 52 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 52 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'joinOnClause));
-# 389 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 389 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : 'value)) in
             let _2 = (let data = parseState.GetInput(2) in (Microsoft.FSharp.Core.Operators.unbox data : 'op)) in
@@ -394,12 +394,12 @@ let _fsyacc_reductions ()  =    [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 55 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 55 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                                Cond(_1, _2, _3) 
                    )
-# 55 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 55 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'conditionList));
-# 402 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 402 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : 'value)) in
             let _2 = (let data = parseState.GetInput(2) in (Microsoft.FSharp.Core.Operators.unbox data : 'op)) in
@@ -408,12 +408,12 @@ let _fsyacc_reductions ()  =    [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 56 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 56 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                                And(Cond(_1, _2, _3), _5) 
                    )
-# 56 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 56 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'conditionList));
-# 416 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 416 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : 'value)) in
             let _2 = (let data = parseState.GetInput(2) in (Microsoft.FSharp.Core.Operators.unbox data : 'op)) in
@@ -422,194 +422,194 @@ let _fsyacc_reductions ()  =    [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 57 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 57 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                                Or(Cond(_1, _2, _3), _5) 
                    )
-# 57 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 57 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'conditionList));
-# 430 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 430 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 61 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 61 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            None 
                    )
-# 61 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 61 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'whereClause));
-# 440 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 440 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _2 = (let data = parseState.GetInput(2) in (Microsoft.FSharp.Core.Operators.unbox data : 'conditionList)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 62 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 62 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            Some(_2) 
                    )
-# 62 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 62 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'whereClause));
-# 451 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 451 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                               Eq 
                    )
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'op));
-# 461 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 461 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                           Lt 
                    )
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'op));
-# 471 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 471 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                       Le 
                    )
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'op));
-# 481 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 481 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                                   Gt 
                    )
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'op));
-# 491 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 491 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                                               Ge 
                    )
-# 64 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 64 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'op));
-# 501 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 501 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : int)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 67 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 67 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                    Int(_1) 
                    )
-# 67 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 67 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'value));
-# 512 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 512 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : float)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 68 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 68 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                    Float(_1) 
                    )
-# 68 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 68 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'value));
-# 523 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 523 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 69 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 69 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                    String(_1) 
                    )
-# 69 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 69 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'value));
-# 534 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 534 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 74 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 74 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            [] 
                    )
-# 74 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 74 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'orderByClause));
-# 544 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 544 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _3 = (let data = parseState.GetInput(3) in (Microsoft.FSharp.Core.Operators.unbox data : 'orderByList)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 75 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 75 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            _3 
                    )
-# 75 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 75 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'orderByClause));
-# 555 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 555 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : 'orderBy)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 78 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 78 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            [_1] 
                    )
-# 78 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 78 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'orderByList));
-# 566 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 566 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : 'orderBy)) in
             let _3 = (let data = parseState.GetInput(3) in (Microsoft.FSharp.Core.Operators.unbox data : 'orderByList)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 79 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 79 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            _1 :: _3 
                    )
-# 79 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 79 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'orderByList));
-# 578 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 578 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 82 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 82 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            _1, Asc 
                    )
-# 82 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 82 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'orderBy));
-# 589 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 589 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 83 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 83 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            _1, Asc 
                    )
-# 83 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 83 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'orderBy));
-# 600 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 600 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
         (fun (parseState : Microsoft.FSharp.Text.Parsing.IParseState) ->
             let _1 = (let data = parseState.GetInput(1) in (Microsoft.FSharp.Core.Operators.unbox data : string)) in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 84 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 84 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                                                            _1, Desc
                    )
-# 84 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fsp"
+# 84 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fsp"
                  : 'orderBy));
 |]
-# 612 "c:\documents and settings\s.g.j.e.janssen\my documents\visual studio 2010\Projects\YaccSample\YaccSample\SqlParser.fs"
+# 612 "D:\workspace\FsYacc-Example\YaccSample\SqlParser.fs"
 let tables () : Microsoft.FSharp.Text.Parsing.Tables<_> = 
   { reductions= _fsyacc_reductions ();
     endOfInputTag = _fsyacc_endOfInputTag;
